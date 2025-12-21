@@ -69,7 +69,7 @@ const Products = () => {
 
             <div style={{ marginBottom: '1rem' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem', color: 'var(--text-main)' }}>{p.name}</h3>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <span style={{
                   background: 'var(--gradient-primary)',
                   color: 'white',
@@ -80,8 +80,27 @@ const Products = () => {
                 }}>
                   {p.stages} Stage
                 </span>
-                <span>•</span>
-                <span style={{ fontWeight: '600', color: 'var(--primary)' }}>{p.capacityLph}L/hr</span>
+                {p.tankCapacityLiters && (
+                  <>
+                    <span>•</span>
+                    <span style={{
+                      background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
+                      color: 'white',
+                      padding: '0.25rem 0.75rem',
+                      borderRadius: '99px',
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                      </svg>
+                      {p.tankCapacityLiters}L Storage
+                    </span>
+                  </>
+                )}
               </div>
             </div>
 

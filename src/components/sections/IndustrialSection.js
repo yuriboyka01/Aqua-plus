@@ -41,17 +41,30 @@ const IndustrialSection = () => {
                 <div className="grid">
                     {industrialProducts.map((product) => (
                         <div key={product.id} className="card" style={{ padding: '2rem', transition: 'all 0.3s ease', borderTop: '4px solid var(--primary)' }}>
+                            {/* Product Image */}
                             <div style={{
-                                background: '#e0f2fe',
-                                width: '60px',
-                                height: '60px',
+                                width: '100%',
+                                height: '280px',
                                 borderRadius: '12px',
+                                overflow: 'hidden',
+                                marginBottom: '1.5rem',
+                                background: '#ffffff',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                marginBottom: '1.5rem'
+                                border: '1px solid #e5e7eb'
                             }}>
-                                <Factory size={32} color="var(--primary)" />
+                                <img
+                                    src={product.img}
+                                    alt={product.name}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'contain',
+                                        padding: '0.5rem'
+                                    }}
+                                    loading="lazy"
+                                />
                             </div>
 
                             <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem', color: 'var(--text-dark)' }}>

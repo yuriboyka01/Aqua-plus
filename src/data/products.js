@@ -5,6 +5,7 @@ export const PRODUCTS = [
     brand: 'Water Lily',
     stages: 7,
     capacityLph: 15,
+    tankCapacityLiters: 10,
     price: 8500,
     img: '/images/water-lily.jpg',
     rating: 4.5,
@@ -14,7 +15,7 @@ export const PRODUCTS = [
     specs: {
       'TDS Reduction': '95-99%',
       Filters: ['Sediment', 'Pre-Carbon', 'RO Membrane', 'UV', 'UF', 'Post Carbon', 'Mineralizer'],
-      Storage: 'Leak Proof Strong & Durable Tank',
+      Storage: '10 Liters Leak Proof Tank',
       Material: 'ABS Plastic',
       'LED Indicator': 'Yes',
     },
@@ -46,6 +47,7 @@ export const PRODUCTS = [
     brand: 'Aqua XL',
     stages: 8,
     capacityLph: 15,
+    tankCapacityLiters: 12,
     price: 10500,
     img: '/images/aqua-xl.jpg',
     rating: 4.7,
@@ -63,6 +65,7 @@ export const PRODUCTS = [
     brand: 'Aqua Jade',
     stages: 7,
     capacityLph: 15,
+    tankCapacityLiters: 10,
     price: 7200,
     img: '/images/aqua-jade.jpg',
     rating: 4.6,
@@ -72,7 +75,7 @@ export const PRODUCTS = [
     specs: {
       'TDS Reduction': '95-99%',
       Filters: ['Sediment', 'Pre-Carbon', 'RO Membrane', 'UV', 'UF', 'Post Carbon', 'Mineralizer'],
-      Storage: '11 Liters (approx.)',
+      Storage: '10 Liters',
       Material: 'Food Grade ABS Plastic',
       'LED Indicator': 'Yes',
       Tank: 'Detachable & Lockable',
@@ -85,6 +88,7 @@ export const PRODUCTS = [
     brand: 'Aqua 2050',
     stages: 10,
     capacityLph: 15,
+    tankCapacityLiters: 10,
     price: 9800,
     img: '/images/aqua-2050.jpg',
     rating: 4.7,
@@ -95,6 +99,7 @@ export const PRODUCTS = [
       'TDS Reduction': '95-99%',
       Technology: 'RO + COPPER with ALKALINE',
       Filters: ['Sediment', 'Pre-Carbon', 'RO Membrane', 'Copper', 'Alkaline', 'UV', 'UF', 'Post Carbon', 'Mineralizer', 'TDS Controller'],
+      Storage: '10 Liters',
       'Special Feature': 'NEXT Technology',
       Warranty: '10 Years Protection',
     },
@@ -105,6 +110,7 @@ export const PRODUCTS = [
     brand: 'Aqua Innovica',
     stages: 7,
     capacityLph: 15,
+    tankCapacityLiters: 11,
     price: 11500,
     img: '/images/aqua-innovica.jpg',
     rating: 4.8,
@@ -114,6 +120,7 @@ export const PRODUCTS = [
     specs: {
       'TDS Reduction': '95-99%',
       Filters: ['Sediment', 'Pre-Carbon', 'RO Membrane', 'UV', 'UF', 'Post Carbon'],
+      Storage: '11 Liters',
       Material: 'Top & Side Spare ABS Plastic',
       Cabinet: 'Spring Cabinet with 4mm Thickness',
       Design: 'Luxurious Significance',
@@ -125,7 +132,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 5,
     capacityLph: 25,
-
+    tankCapacityLiters: 25,
     img: '/images/ro-25-lph.jpg',
     rating: 4.5,
     warrantyMonths: 12,
@@ -135,6 +142,7 @@ export const PRODUCTS = [
       Power: '24V DC / 220V AC',
       Filters: ['Sediment', 'Carbon', 'RO Membrane (100 GPD x 1)', 'UV'],
       'Frame': 'SS Skid / FRP',
+      'Storage Tank': '25 Liters',
     },
   },
   {
@@ -143,7 +151,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 5,
     capacityLph: 50,
-
+    tankCapacityLiters: 50,
     img: '/images/ro-50-lph.jpg',
     rating: 4.6,
     warrantyMonths: 12,
@@ -153,6 +161,7 @@ export const PRODUCTS = [
       Power: '220V AC',
       Filters: ['Sediment', 'Carbon', 'RO Membrane (100 GPD x 2/3)', 'Post Carbon'],
       'Automation': 'Fully Automatic',
+      'Storage Tank': '50 Liters',
     },
   },
   {
@@ -161,7 +170,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 6,
     capacityLph: 100,
-
+    tankCapacityLiters: 100,
     img: '/images/ro-100-lph.jpg',
     rating: 4.7,
     warrantyMonths: 12,
@@ -171,6 +180,7 @@ export const PRODUCTS = [
       Power: '220V AC',
       Filters: ['Sand Filter', 'Carbon', 'Micron', 'RO Membranes (4021 x 1)', 'Anti-Scalant'],
       'Recovery Rate': '40-50%',
+      'Storage Tank': '100 Liters',
     },
   },
   {
@@ -179,7 +189,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 7,
     capacityLph: 250,
-
+    tankCapacityLiters: 150,
     img: '/images/ro-250-lph.jpg',
     rating: 4.8,
     warrantyMonths: 12,
@@ -189,6 +199,7 @@ export const PRODUCTS = [
       Power: '220V AC',
       Filters: ['Multimedia Filter', 'Carbon', 'Micron', 'RO Membrane (4040 x 1)', 'UV'],
       'Pump': 'High Pressure 0.5/1 HP',
+      'Storage Tank': '150 Liters',
     },
   },
   {
@@ -197,7 +208,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 5,
     capacityLph: 500,
-
+    tankCapacityLiters: 500,
     img: '/images/ro-500-lph.jpg',
     rating: 4.8,
     warrantyMonths: 12,
@@ -207,6 +218,7 @@ export const PRODUCTS = [
       Power: '220-440V AC',
       Filters: ['Sand Filter', 'Carbon Filter', 'Micron Cartridge', 'RO Membranes (4040)', 'Anti-Scalant'],
       'Recovery Rate': '50-70%',
+      'Storage Tank': '500 Liters',
     },
   },
   {
@@ -215,7 +227,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 7,
     capacityLph: 1000,
-
+    tankCapacityLiters: 1000,
     img: '/images/industrial-ro-500.jpg',
     rating: 4.9,
     warrantyMonths: 12,
@@ -225,6 +237,7 @@ export const PRODUCTS = [
       Power: '440V AC (3 Phase)',
       Filters: ['Sand Filter', 'Carbon', 'Micron', 'RO Membranes (4040 x 4/5)', 'UV', 'Antiscalant'],
       'Operation': 'Fully Automatic',
+      'Storage Tank': '1000 Liters',
     },
   },
   {
@@ -233,7 +246,7 @@ export const PRODUCTS = [
     brand: 'Generic',
     stages: 8,
     capacityLph: 2000,
-
+    tankCapacityLiters: 2000,
     img: '/images/industrial-ro-500.jpg',
     rating: 4.9,
     warrantyMonths: 12,
@@ -243,6 +256,7 @@ export const PRODUCTS = [
       Power: '440V AC (3 Phase)',
       Filters: ['Multimedia', 'Carbon', 'Micron', 'RO Membranes (8040 x 2)', 'UV', 'CIP System'],
       'Frame': 'Stainless Steel',
+      'Storage Tank': '2000 Liters',
     },
   },
   {
@@ -251,6 +265,7 @@ export const PRODUCTS = [
     brand: 'Aqua Grand',
     stages: 10,
     capacityLph: 15,
+    tankCapacityLiters: 12,
     price: 7500,
     img: '/images/aqua-grand-plus.jpg',
     rating: 4.3,

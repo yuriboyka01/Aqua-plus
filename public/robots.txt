@@ -1,3 +1,35 @@
 # https://www.robotstxt.org/robotstxt.html
+# Aqua Plus RO Tech - Optimized robots.txt for maximum SEO
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemaps
+Sitemap: https://aquaplusrotech.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 0
+
+# Block access to admin/API directories (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow search engines to index all images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
