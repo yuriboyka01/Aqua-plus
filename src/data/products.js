@@ -126,7 +126,7 @@ export const PRODUCTS = [
     stages: 5,
     capacityLph: 25,
 
-    img: '/images/industrial-ro-500.jpg',
+    img: '/images/ro-25-lph.jpg',
     rating: 4.5,
     warrantyMonths: 12,
     stock: 5,
@@ -144,7 +144,7 @@ export const PRODUCTS = [
     stages: 5,
     capacityLph: 50,
 
-    img: '/images/industrial-ro-500.jpg',
+    img: '/images/ro-50-lph.jpg',
     rating: 4.6,
     warrantyMonths: 12,
     stock: 4,
@@ -162,7 +162,7 @@ export const PRODUCTS = [
     stages: 6,
     capacityLph: 100,
 
-    img: '/images/industrial-ro-500.jpg',
+    img: '/images/ro-100-lph.jpg',
     rating: 4.7,
     warrantyMonths: 12,
     stock: 3,
@@ -180,7 +180,7 @@ export const PRODUCTS = [
     stages: 7,
     capacityLph: 250,
 
-    img: '/images/industrial-ro-500.jpg',
+    img: '/images/ro-250-lph.jpg',
     rating: 4.8,
     warrantyMonths: 12,
     stock: 2,
@@ -198,7 +198,7 @@ export const PRODUCTS = [
     stages: 5,
     capacityLph: 500,
 
-    img: '/images/industrial-ro-500.jpg',
+    img: '/images/ro-500-lph.jpg',
     rating: 4.8,
     warrantyMonths: 12,
     stock: 2,
