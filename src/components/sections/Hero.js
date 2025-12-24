@@ -14,44 +14,36 @@ const Hero = () => {
 
   return (
     <section className="section-padding" style={{
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
-      backgroundSize: '400% 400%',
-      animation: 'gradient-shift 15s ease infinite',
+      background: 'linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0891b2 100%)',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Colorful floating shapes */}
+      {/* Subtle decorative elements */}
       <div style={{
         position: 'absolute',
-        top: '10%',
-        left: '5%',
-        width: '200px',
-        height: '200px',
-        background: 'radial-gradient(circle, rgba(251, 207, 232, 0.6), transparent)',
-        borderRadius: '50%',
-        filter: 'blur(40px)',
-        animation: 'float 8s ease-in-out infinite'
+        top: '0',
+        right: '0',
+        width: '50%',
+        height: '100%',
+        background: 'radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08), transparent 60%)',
+        pointerEvents: 'none'
       }} />
       <div style={{
         position: 'absolute',
-        bottom: '15%',
-        right: '10%',
-        width: '250px',
-        height: '250px',
-        background: 'radial-gradient(circle, rgba(165, 243, 252, 0.6), transparent)',
-        borderRadius: '50%',
-        filter: 'blur(50px)',
-        animation: 'float 10s ease-in-out infinite',
-        animationDelay: '2s'
+        bottom: '0',
+        left: '0',
+        width: '40%',
+        height: '60%',
+        background: 'radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05), transparent 50%)',
+        pointerEvents: 'none'
       }} />
 
-      <div className="container grid-cols-2 flex-center" style={{
+      <div className="container grid-cols-2 flex-center hero-grid" style={{
         minHeight: '600px',
         position: 'relative',
         zIndex: 1,
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '2rem',
+        gap: '3rem',
         alignItems: 'center'
       }}>
 
@@ -59,51 +51,83 @@ const Hero = () => {
         <div className="animate-fade-in">
           <div style={{
             display: 'inline-block',
-            padding: '0.5rem 1rem',
-            background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+            padding: '0.625rem 1.25rem',
+            background: 'rgba(255, 255, 255, 0.15)',
+            backdropFilter: 'blur(10px)',
             color: 'white',
             borderRadius: '99px',
-            fontWeight: 700,
+            fontWeight: 600,
             fontSize: '0.875rem',
             marginBottom: '1.5rem',
-            boxShadow: '0 4px 15px rgba(251, 191, 36, 0.5)',
-            animation: 'pulse-scale 2s ease-in-out infinite'
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            letterSpacing: '0.025em'
           }}>
-            ✨ #1 Rated Water Service in Madurai
+            #1 Rated Water Service in Madurai
           </div>
-          <h1>
-            Experience <span className="text-gradient">Pure Water</span>, <br />
+          <h1 style={{ color: 'white', marginBottom: '1.5rem', lineHeight: '1.1' }}>
+            Experience <span style={{ color: '#22d3ee' }}>Pure Water</span>, <br />
             Experience Health.
           </h1>
-          <p className="text-muted" style={{ fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: '500px' }}>
+          <p style={{
+            fontSize: '1.125rem',
+            marginBottom: '2.5rem',
+            maxWidth: '500px',
+            color: 'rgba(255, 255, 255, 0.85)',
+            lineHeight: '1.7'
+          }}>
             Advanced RO purifiers and expert maintenance services delivered to your doorstep. Join 500+ happy families today.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }} className="hero-buttons">
             <button
               onClick={handleBrowseProducts}
-              className="btn btn-primary hover-scale"
+              className="btn"
+              style={{
+                background: 'white',
+                color: '#0369a1',
+                fontWeight: 600,
+                padding: '1rem 2rem',
+                border: 'none',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+              }}
             >
               Browse Products
-              {/* Arrow Right Icon */}
               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </button>
             <button
               onClick={handleBookService}
-              className="btn btn-secondary hover-scale"
+              className="btn"
+              style={{
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid rgba(255, 255, 255, 0.5)',
+                fontWeight: 600,
+                padding: '1rem 2rem'
+              }}
             >
               Book a Service
             </button>
           </div>
 
           {/* Trust Indicators */}
-          <div style={{ marginTop: '3rem', display: 'flex', gap: '2rem', borderTop: '1px solid var(--border)', paddingTop: '2rem' }}>
+          <div style={{
+            marginTop: '3rem',
+            display: 'flex',
+            gap: '2rem',
+            flexWrap: 'wrap',
+            borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+            paddingTop: '2rem'
+          }}>
             <div>
-              <div style={{ fontWeight: 800, fontSize: '1.5rem', color: 'var(--primary-dark)' }}>500+</div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Happy Clients</div>
+              <div style={{ fontWeight: 700, fontSize: '1.75rem', color: 'white' }}>500+</div>
+              <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>Happy Clients</div>
             </div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: '1.5rem', color: 'var(--primary-dark)' }}>60min</div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Response Time</div>
+              <div style={{ fontWeight: 700, fontSize: '1.75rem', color: 'white' }}>60min</div>
+              <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>Response Time</div>
+            </div>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: '1.75rem', color: 'white' }}>10+ Yrs</div>
+              <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.7)' }}>Experience</div>
             </div>
           </div>
         </div>
@@ -111,55 +135,82 @@ const Hero = () => {
         {/* Visual Side */}
         <div style={{ position: 'relative' }} className="animate-fade-in hero-visual">
           {/* Main Image Card */}
-          <div className="card" style={{ padding: '1rem', transform: 'rotate(-2deg)', border: 'none', boxShadow: 'var(--shadow-xl)' }}>
+          <div style={{
+            background: 'white',
+            padding: '0.75rem',
+            borderRadius: '1rem',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+          }}>
             <img
               src="/images/hero_service.png"
               alt="Aqua Plus RO Tech technician installing RO purifier"
-              style={{ borderRadius: 'var(--radius-lg)', height: '400px', width: '100%', objectFit: 'cover' }}
+              style={{ borderRadius: '0.75rem', height: '420px', width: '100%', objectFit: 'cover' }}
             />
             {/* Floating Badge */}
             <div style={{
-              position: 'absolute', bottom: '-20px', left: '-20px',
-              background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-xl)',
-              boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '1rem'
+              position: 'absolute',
+              bottom: '-15px',
+              left: '-15px',
+              background: 'white',
+              padding: '1.25rem 1.5rem',
+              borderRadius: '0.75rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.12)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.875rem'
             }} className="hero-badge">
-              <div style={{ background: '#dcfce7', padding: '0.75rem', borderRadius: '50%' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+              <div style={{
+                background: '#dcfce7',
+                padding: '0.625rem',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth="2.5">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
               </div>
               <div>
-                <div style={{ fontWeight: 700 }}>100% Guaranteed</div>
-                <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>Pure TDS Check</div>
+                <div style={{ fontWeight: 700, color: '#0f172a', fontSize: '0.9375rem' }}>100% Guaranteed</div>
+                <div style={{ fontSize: '0.8125rem', color: '#64748b' }}>Pure TDS Check</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile-specific styles */}
+      {/* Responsive styles for all devices */}
       <style jsx>{`
-        @media (max-width: 768px) {
-          .container.grid-cols-2 {
+        /* Desktop - Default */
+        .hero-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        /* Mobile phones (up to 767px) */
+        @media (max-width: 767px) {
+          .hero-grid {
             grid-template-columns: 1fr !important;
-            min-height: 500px !important;
+            min-height: auto !important;
             gap: 2rem !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
           }
           
           .hero-visual {
             order: -1;
           }
           
-          .hero-visual .card {
-            transform: rotate(0deg) !important;
-          }
-          
           .hero-visual img {
-            height: 300px !important;
+            height: 280px !important;
           }
           
           .hero-badge {
-            padding: 1rem !important;
-            bottom: -15px !important;
-            left: -15px !important;
+            padding: 0.875rem 1rem !important;
+            bottom: -10px !important;
+            left: 10px !important;
+            right: auto !important;
           }
           
           .hero-buttons {
@@ -168,12 +219,30 @@ const Hero = () => {
           
           .hero-buttons .btn {
             width: 100% !important;
+            justify-content: center;
           }
         }
         
+        /* Small phones - iPhone SE (up to 375px) */
         @media (max-width: 375px) {
           .hero-visual img {
-            height: 250px !important;
+            height: 220px !important;
+          }
+          
+          .hero-badge {
+            padding: 0.75rem !important;
+            font-size: 0.8rem !important;
+          }
+        }
+        
+        /* Tablets (768px - 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+          .hero-grid {
+            gap: 2rem !important;
+          }
+          
+          .hero-visual img {
+            height: 350px !important;
           }
         }
       `}</style>

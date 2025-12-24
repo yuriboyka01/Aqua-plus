@@ -50,229 +50,255 @@ const Booking = () => {
   };
 
   return (
-    <section id="booking" className="section-padding container particle-bg dynamic-gradient" style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Decorative Background */}
-      <div style={{
-        position: 'absolute',
-        top: '-10%',
-        right: '-5%',
-        width: '300px',
-        height: '300px',
-        background: 'radial-gradient(circle, rgba(249, 115, 22, 0.2), transparent)',
-        borderRadius: '50%',
-        filter: 'blur(60px)',
-        zIndex: 0
-      }} />
-
-      <div className="card animate-slide-up pulse-glow-accent" style={{
-        maxWidth: '900px',
-        margin: '0 auto',
-        padding: '3rem',
-        boxShadow: 'var(--shadow-glow-accent)',
-        position: 'relative',
-        zIndex: 1,
-        background: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(10px)'
-      }} ref={formRef}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <div className="enquiry-badge" style={{ marginBottom: '1.5rem' }}>
-            📅 Quick Booking
+    <section id="booking" className="section-padding" style={{ background: 'white' }}>
+      <div className="container">
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto',
+          padding: '3rem',
+          background: 'white',
+          border: '1px solid #e2e8f0',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
+        }} ref={formRef}>
+          {/* Header */}
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <div style={{
+              display: 'inline-block',
+              padding: '0.5rem 1rem',
+              background: '#f0f9ff',
+              color: '#0369a1',
+              borderRadius: '99px',
+              fontWeight: 600,
+              fontSize: '0.8125rem',
+              marginBottom: '1rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}>
+              Quick Booking
+            </div>
+            <h2 style={{ color: '#0f172a', fontSize: '2.25rem', marginBottom: '0.75rem' }}>
+              Schedule Your Service
+            </h2>
+            <p style={{ color: '#64748b', fontSize: '1.0625rem', maxWidth: '600px', margin: '0 auto' }}>
+              Fill out the form below and we'll get back to you within <strong style={{ color: '#0891b2' }}>60 minutes</strong>
+            </p>
           </div>
-          <h2 className="text-gradient-vibrant" style={{ marginBottom: '1rem', fontSize: '2.5rem' }}>
-            Schedule Your Service
-          </h2>
-          <p className="text-muted" style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-            Fill out the form below and we'll get back to you within <strong style={{ color: 'var(--accent)' }}>60 minutes</strong>
-          </p>
+
+          <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'grid', gap: '1.5rem' }}>
+            {/* Row 1: Name and Phone */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+              <div>
+                <label style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  fontSize: '0.875rem'
+                }}>
+                  <Phone size={16} color="#64748b" />
+                  Full Name
+                </label>
+                <input
+                  className="input"
+                  placeholder="Enter your name"
+                  style={{ border: '1px solid #e2e8f0' }}
+                  {...register('name', { required: true })}
+                />
+                {errors.name && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Name is required</div>}
+              </div>
+
+              <div>
+                <label style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  fontSize: '0.875rem'
+                }}>
+                  <Phone size={16} color="#64748b" />
+                  Phone Number
+                </label>
+                <input
+                  className="input"
+                  placeholder="10-digit mobile number"
+                  style={{ border: '1px solid #e2e8f0' }}
+                  {...register('phone', { required: true, pattern: /^[0-9]{10}$/ })}
+                />
+                {errors.phone && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Enter valid 10-digit phone</div>}
+              </div>
+            </div>
+
+            {/* Row 2: Service Type and Product */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+              <div>
+                <label style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  fontSize: '0.875rem'
+                }}>
+                  <Package size={16} color="#64748b" />
+                  Service Type
+                </label>
+                <select className="input" style={{ border: '1px solid #e2e8f0' }} {...register('serviceType', { required: true })}>
+                  <option value="installation">Installation</option>
+                  <option value="maintenance">Maintenance</option>
+                  <option value="filter-replacement">Filter Replacement</option>
+                  <option value="repair">Repair</option>
+                </select>
+              </div>
+
+              <div>
+                <label style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.5rem',
+                  fontWeight: 600,
+                  color: '#0f172a',
+                  fontSize: '0.875rem'
+                }}>
+                  <Package size={16} color="#64748b" />
+                  Product (Optional)
+                </label>
+                <select className="input" style={{ border: '1px solid #e2e8f0' }} {...register('productId')}>
+                  <option value="">-- Select Product --</option>
+                  {products.map(p => <option key={p.id} value={p.id} disabled={p.stock === 0}>{p.name}{p.stock === 0 ? ' (Out of stock)' : ''}</option>)}
+                </select>
+              </div>
+            </div>
+
+            {/* Row 3: Date & Time */}
+            <div>
+              <label style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                marginBottom: '0.5rem',
+                fontWeight: 600,
+                color: '#0f172a',
+                fontSize: '0.875rem'
+              }}>
+                <Calendar size={16} color="#64748b" />
+                Preferred Date & Time
+              </label>
+              <input
+                type="datetime-local"
+                className="input"
+                style={{ border: '1px solid #e2e8f0' }}
+                {...register('preferredAt', { required: true })}
+              />
+              {errors.preferredAt && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Please select a date and time</div>}
+            </div>
+
+            {/* Row 4: Address */}
+            <div>
+              <label style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                marginBottom: '0.5rem',
+                fontWeight: 600,
+                color: '#0f172a',
+                fontSize: '0.875rem'
+              }}>
+                <MapPin size={16} color="#64748b" />
+                Service Address
+              </label>
+              <textarea
+                className="input"
+                rows={3}
+                placeholder="Enter your complete address"
+                style={{ border: '1px solid #e2e8f0' }}
+                {...register('address', { required: true })}
+              ></textarea>
+              {errors.address && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Address is required</div>}
+            </div>
+
+            {/* Status Messages */}
+            {status === 'success' && (
+              <div style={{
+                background: '#dcfce7',
+                color: '#166534',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                fontSize: '0.9375rem',
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Booking sent successfully! We will confirm shortly.
+              </div>
+            )}
+
+            {status === 'error' && (
+              <div style={{
+                background: '#fee2e2',
+                color: '#991b1b',
+                padding: '1rem',
+                borderRadius: '0.5rem',
+                fontSize: '0.9375rem',
+                fontWeight: 600
+              }}>
+                Failed to send booking. Please try WhatsApp or call us directly.
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+              <button
+                type="submit"
+                className="btn"
+                disabled={isSubmitting || status === 'sending'}
+                style={{
+                  flex: '1',
+                  minWidth: '200px',
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #0891b2, #0369a1)',
+                  color: 'white',
+                  border: 'none',
+                  fontWeight: 600,
+                  padding: '1rem 1.5rem'
+                }}
+              >
+                {status === 'sending' ? 'Sending...' : 'Confirm Booking'}
+              </button>
+
+              <button
+                type="button"
+                className="btn"
+                onClick={() => window.open('https://wa.me/917010329920', '_blank')}
+                style={{
+                  flex: '1',
+                  minWidth: '200px',
+                  justifyContent: 'center',
+                  background: '#25D366',
+                  color: 'white',
+                  border: 'none',
+                  fontWeight: 600,
+                  padding: '1rem 1.5rem'
+                }}
+              >
+                WhatsApp Instead
+              </button>
+            </div>
+          </form>
         </div>
-
-        <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'grid', gap: '1.5rem' }}>
-          {/* Row 1: Name and Phone */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-            <div>
-              <label className="text-sm" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: 'var(--text-main)'
-              }}>
-                <Phone size={16} />
-                Full Name
-              </label>
-              <input
-                className="input"
-                placeholder="Enter your name"
-                {...register('name', { required: true })}
-              />
-              {errors.name && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Name is required</div>}
-            </div>
-
-            <div>
-              <label className="text-sm" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: 'var(--text-main)'
-              }}>
-                <Phone size={16} />
-                Phone Number
-              </label>
-              <input
-                className="input"
-                placeholder="10-digit mobile number"
-                {...register('phone', { required: true, pattern: /^[0-9]{10}$/ })}
-              />
-              {errors.phone && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Enter valid 10-digit phone</div>}
-            </div>
-          </div>
-
-          {/* Row 2: Service Type and Product */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-            <div>
-              <label className="text-sm" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: 'var(--text-main)'
-              }}>
-                <Package size={16} />
-                Service Type
-              </label>
-              <select className="input" {...register('serviceType', { required: true })}>
-                <option value="installation">Installation</option>
-                <option value="maintenance">Maintenance</option>
-                <option value="filter-replacement">Filter Replacement</option>
-                <option value="repair">Repair</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="text-sm" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '0.5rem',
-                fontWeight: '600',
-                color: 'var(--text-main)'
-              }}>
-                <Package size={16} />
-                Product (Optional)
-              </label>
-              <select className="input" {...register('productId')}>
-                <option value="">-- Select Product --</option>
-                {products.map(p => <option key={p.id} value={p.id} disabled={p.stock === 0}>{p.name}{p.stock === 0 ? ' (Out of stock)' : ''}</option>)}
-              </select>
-            </div>
-          </div>
-
-          {/* Row 3: Date & Time */}
-          <div>
-            <label className="text-sm" style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              marginBottom: '0.5rem',
-              fontWeight: '600',
-              color: 'var(--text-main)'
-            }}>
-              <Calendar size={16} />
-              Preferred Date & Time
-            </label>
-            <input
-              type="datetime-local"
-              className="input"
-              {...register('preferredAt', { required: true })}
-            />
-            {errors.preferredAt && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Please select a date and time</div>}
-          </div>
-
-          {/* Row 4: Address */}
-          <div>
-            <label className="text-sm" style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              marginBottom: '0.5rem',
-              fontWeight: '600',
-              color: 'var(--text-main)'
-            }}>
-              <MapPin size={16} />
-              Service Address
-            </label>
-            <textarea
-              className="input"
-              rows={3}
-              placeholder="Enter your complete address"
-              {...register('address', { required: true })}
-            ></textarea>
-            {errors.address && <div style={{ color: '#ef4444', fontSize: '0.875rem', marginTop: '0.25rem' }}>Address is required</div>}
-          </div>
-
-          {/* Status Messages */}
-          {status === 'success' && (
-            <div style={{
-              background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)',
-              color: '#166534',
-              padding: '1rem',
-              borderRadius: 'var(--radius-lg)',
-              fontSize: '0.95rem',
-              fontWeight: '600',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Booking sent successfully! We will confirm shortly.
-            </div>
-          )}
-
-          {status === 'error' && (
-            <div style={{
-              background: 'linear-gradient(135deg, #fee2e2, #fecaca)',
-              color: '#991b1b',
-              padding: '1rem',
-              borderRadius: 'var(--radius-lg)',
-              fontSize: '0.95rem',
-              fontWeight: '600'
-            }}>
-              Failed to send booking. Please try WhatsApp or call us directly.
-            </div>
-          )}
-
-          {/* Action Buttons */}
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
-            <button
-              type="submit"
-              className="btn btn-primary btn-ripple hover-lift"
-              disabled={isSubmitting || status === 'sending'}
-              style={{ flex: '1', minWidth: '200px', justifyContent: 'center' }}
-            >
-              {status === 'sending' ? 'Sending...' : 'Confirm Booking'}
-            </button>
-
-            <button
-              type="button"
-              className="btn btn-secondary hover-lift"
-              onClick={() => window.open('https://wa.me/917010329920', '_blank')}
-              style={{ flex: '1', minWidth: '200px', justifyContent: 'center' }}
-            >
-              WhatsApp Instead
-            </button>
-          </div>
-        </form>
       </div>
     </section>
   );
 };
 
 export default Booking;
-

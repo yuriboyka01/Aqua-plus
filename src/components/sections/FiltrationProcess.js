@@ -125,179 +125,182 @@ const FiltrationProcess = () => {
     };
 
     return (
-        <section className="section-padding container">
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                <div style={{
-                    display: 'inline-block',
-                    padding: '0.5rem 1rem',
-                    background: 'linear-gradient(135deg, #0891b2, #06b6d4)',
-                    color: 'white',
-                    borderRadius: '99px',
-                    fontWeight: 700,
-                    fontSize: '0.875rem',
-                    marginBottom: '1rem',
-                    boxShadow: '0 4px 15px rgba(8, 145, 178, 0.4)'
-                }}>
-                    💧 Advanced Technology
+        <section className="section-padding" style={{ background: 'white' }}>
+            <div className="container">
+                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                    <div style={{
+                        display: 'inline-block',
+                        padding: '0.5rem 1rem',
+                        background: '#f0f9ff',
+                        color: '#0369a1',
+                        borderRadius: '99px',
+                        fontWeight: 600,
+                        fontSize: '0.8125rem',
+                        marginBottom: '1rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em'
+                    }}>
+                        Advanced Technology
+                    </div>
+                    <h2 style={{ color: '#0f172a', fontSize: '2.25rem', marginBottom: '0.75rem' }}>5-7 Stage Advanced Filtration</h2>
+                    <p style={{ color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>How we ensure every drop is pure, safe, and healthy.</p>
                 </div>
-                <h2 className="text-gradient">5-7 Stage Advanced Filtration</h2>
-                <p className="text-muted">How we ensure every drop is pure, safe, and healthy.</p>
-            </div>
 
-            {/* Filtration Diagram */}
-            <div className="card" style={{ padding: '2rem', textAlign: 'center', marginBottom: '3rem' }}>
-                <img
-                    src="/images/filtration_diagram.png"
-                    alt="5-7 Stage RO Filtration Process Diagram"
-                    style={{ width: '100%', maxHeight: '500px', objectFit: 'contain', margin: '0 auto' }}
-                />
-            </div>
+                {/* Filtration Diagram */}
+                <div className="card" style={{ padding: '2rem', textAlign: 'center', marginBottom: '3rem' }}>
+                    <img
+                        src="/images/filtration_diagram.png"
+                        alt="5-7 Stage RO Filtration Process Diagram"
+                        style={{ width: '100%', maxHeight: '500px', objectFit: 'contain', margin: '0 auto' }}
+                    />
+                </div>
 
-            {/* Filtration Stages Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-                {filtrationStages.map((stage) => {
-                    const Icon = stage.icon;
-                    const isExpanded = expandedStage === stage.id;
+                {/* Filtration Stages Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                    {filtrationStages.map((stage) => {
+                        const Icon = stage.icon;
+                        const isExpanded = expandedStage === stage.id;
 
-                    return (
-                        <div
-                            key={stage.id}
-                            className="card hover-lift"
-                            style={{
-                                padding: '1.5rem',
-                                cursor: 'pointer',
-                                borderTop: `4px solid ${stage.color}`,
-                                transition: 'all 0.3s ease'
-                            }}
-                            onClick={() => toggleStage(stage.id)}
-                        >
-                            {/* Stage Header */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                                <div style={{
-                                    background: stage.bgColor,
-                                    width: '50px',
-                                    height: '50px',
-                                    borderRadius: '12px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    flexShrink: 0
-                                }}>
-                                    <Icon size={28} color={stage.color} />
-                                </div>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                        <span style={{
-                                            background: stage.color,
-                                            color: 'white',
-                                            width: '24px',
-                                            height: '24px',
-                                            borderRadius: '50%',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            fontSize: '0.75rem',
-                                            fontWeight: '700'
-                                        }}>
-                                            {stage.id}
-                                        </span>
-                                        <h3 style={{ fontSize: '1.1rem', margin: 0, color: 'var(--text-main)' }}>{stage.name}</h3>
+                        return (
+                            <div
+                                key={stage.id}
+                                className="card hover-lift"
+                                style={{
+                                    padding: '1.5rem',
+                                    cursor: 'pointer',
+                                    borderTop: `4px solid ${stage.color}`,
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onClick={() => toggleStage(stage.id)}
+                            >
+                                {/* Stage Header */}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                                    <div style={{
+                                        background: stage.bgColor,
+                                        width: '50px',
+                                        height: '50px',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        flexShrink: 0
+                                    }}>
+                                        <Icon size={28} color={stage.color} />
                                     </div>
-                                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
-                                        {stage.subtitle}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Stage Description */}
-                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                                {stage.description}
-                            </p>
-
-                            {/* Removes Tags */}
-                            {stage.removes.length > 0 && (
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
-                                    {stage.removes.slice(0, isExpanded ? stage.removes.length : 3).map((item, idx) => (
-                                        <span
-                                            key={idx}
-                                            style={{
-                                                background: stage.bgColor,
-                                                color: stage.color,
-                                                padding: '0.25rem 0.75rem',
-                                                borderRadius: '99px',
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                            <span style={{
+                                                background: stage.color,
+                                                color: 'white',
+                                                width: '24px',
+                                                height: '24px',
+                                                borderRadius: '50%',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
                                                 fontSize: '0.75rem',
-                                                fontWeight: '600'
-                                            }}
-                                        >
-                                            {item}
-                                        </span>
-                                    ))}
-                                    {!isExpanded && stage.removes.length > 3 && (
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                                            +{stage.removes.length - 3} more
-                                        </span>
-                                    )}
+                                                fontWeight: '700'
+                                            }}>
+                                                {stage.id}
+                                            </span>
+                                            <h3 style={{ fontSize: '1.1rem', margin: 0, color: 'var(--text-main)' }}>{stage.name}</h3>
+                                        </div>
+                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                                            {stage.subtitle}
+                                        </div>
+                                    </div>
                                 </div>
-                            )}
 
-                            {/* Expanded Details */}
-                            {isExpanded && (
-                                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
-                                    <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                                        {stage.details.map((detail, idx) => (
-                                            <li key={idx} style={{ marginBottom: '0.5rem' }}>{detail}</li>
+                                {/* Stage Description */}
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                                    {stage.description}
+                                </p>
+
+                                {/* Removes Tags */}
+                                {stage.removes.length > 0 && (
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+                                        {stage.removes.slice(0, isExpanded ? stage.removes.length : 3).map((item, idx) => (
+                                            <span
+                                                key={idx}
+                                                style={{
+                                                    background: stage.bgColor,
+                                                    color: stage.color,
+                                                    padding: '0.25rem 0.75rem',
+                                                    borderRadius: '99px',
+                                                    fontSize: '0.75rem',
+                                                    fontWeight: '600'
+                                                }}
+                                            >
+                                                {item}
+                                            </span>
                                         ))}
-                                    </ul>
-                                </div>
-                            )}
+                                        {!isExpanded && stage.removes.length > 3 && (
+                                            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                                                +{stage.removes.length - 3} more
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
 
-                            {/* Expand/Collapse Indicator */}
-                            <div style={{ textAlign: 'center', marginTop: '1rem', color: stage.color, fontSize: '0.875rem', fontWeight: '600' }}>
-                                {isExpanded ? '▲ Click to collapse' : '▼ Click to expand'}
+                                {/* Expanded Details */}
+                                {isExpanded && (
+                                    <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border)' }}>
+                                        <ul style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+                                            {stage.details.map((detail, idx) => (
+                                                <li key={idx} style={{ marginBottom: '0.5rem' }}>{detail}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                {/* Expand/Collapse Indicator */}
+                                <div style={{ textAlign: 'center', marginTop: '1rem', color: stage.color, fontSize: '0.875rem', fontWeight: '600' }}>
+                                    {isExpanded ? '▲ Click to collapse' : '▼ Click to expand'}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Before & After Comparison */}
+                <div className="card" style={{ padding: '2rem', background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
+                    <h3 style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--primary-dark)' }}>
+                        Water Quality: Before & After
+                    </h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#ef4444', marginBottom: '0.5rem' }}>
+                                500-2000
+                            </div>
+                            <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                                TDS Before (ppm)
+                            </div>
+                            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                                Contains dissolved salts, minerals, and contaminants
                             </div>
                         </div>
-                    );
-                })}
-            </div>
-
-            {/* Before & After Comparison */}
-            <div className="card" style={{ padding: '2rem', background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
-                <h3 style={{ textAlign: 'center', marginBottom: '2rem', color: 'var(--primary-dark)' }}>
-                    Water Quality: Before & After
-                </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#ef4444', marginBottom: '0.5rem' }}>
-                            500-2000
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
                         </div>
-                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                            TDS Before (ppm)
-                        </div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                            Contains dissolved salts, minerals, and contaminants
+                        <div style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#10b981', marginBottom: '0.5rem' }}>
+                                50-150
+                            </div>
+                            <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                                TDS After (ppm)
+                            </div>
+                            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                                Pure, safe, and healthy drinking water
+                            </div>
                         </div>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#10b981', marginBottom: '0.5rem' }}>
-                            50-150
+                    <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(255, 255, 255, 0.7)', borderRadius: '0.5rem', textAlign: 'center' }}>
+                        <strong style={{ color: 'var(--primary-dark)' }}>90-95% TDS Reduction</strong>
+                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
+                            Removes harmful contaminants while retaining essential minerals
                         </div>
-                        <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                            TDS After (ppm)
-                        </div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                            Pure, safe, and healthy drinking water
-                        </div>
-                    </div>
-                </div>
-                <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(255, 255, 255, 0.7)', borderRadius: '0.5rem', textAlign: 'center' }}>
-                    <strong style={{ color: 'var(--primary-dark)' }}>90-95% TDS Reduction</strong>
-                    <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                        Removes harmful contaminants while retaining essential minerals
                     </div>
                 </div>
             </div>

@@ -1,84 +1,111 @@
 import React from 'react';
 
 const About = () => (
-    <section id="about" className="section-padding container" style={{
-        background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%)',
-        position: 'relative',
-        overflow: 'hidden'
+    <section id="about" className="section-padding" style={{
+        background: 'white',
+        position: 'relative'
     }}>
-        {/* Decorative elements */}
-        <div style={{
-            position: 'absolute',
-            top: '-10%',
-            right: '-5%',
-            width: '300px',
-            height: '300px',
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent)',
-            borderRadius: '50%',
-            filter: 'blur(60px)'
-        }} />
+        <div className="container">
+            <div className="grid-cols-2 flex-center" style={{ gap: '4rem' }}>
+                <div className="animate-fade-in">
+                    <div style={{
+                        display: 'inline-block',
+                        padding: '0.5rem 1rem',
+                        background: '#f0f9ff',
+                        color: '#0369a1',
+                        borderRadius: '99px',
+                        fontWeight: 600,
+                        fontSize: '0.8125rem',
+                        marginBottom: '1.25rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em'
+                    }}>
+                        About Us
+                    </div>
+                    <h2 style={{
+                        color: '#0f172a',
+                        fontSize: '2.25rem',
+                        marginBottom: '1rem',
+                        lineHeight: '1.2'
+                    }}>
+                        Madurai's Most Trusted RO Service Partner
+                    </h2>
+                    <p style={{
+                        marginBottom: '1.25rem',
+                        fontSize: '1.0625rem',
+                        color: '#475569',
+                        lineHeight: '1.7'
+                    }}>
+                        At Aqua Plus RO Tech, we believe that clean water is the foundation of good health. Established in Thirunagar,
+                        we have grown to serve over 500+ families across Madurai with a singular mission: <strong>Zero Compromise on Water Quality.</strong>
+                    </p>
+                    <p style={{
+                        marginBottom: '2.5rem',
+                        color: '#475569',
+                        lineHeight: '1.7'
+                    }}>
+                        Whether it's a routine filter change, a complex repair, or a new installation, our certified technicians
+                        bring expertise and genuine spare parts to your doorstep. We are not just service providers;
+                        we are your water safety guardians.
+                    </p>
 
-        <div className="grid-cols-2 flex-center" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="animate-fade-in">
-                <h2 className="text-gradient-vibrant">About Aqua Plus RO Tech</h2>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#7c2d12' }}>
-                    Madurai's Most Trusted RO Service Partner
-                </h3>
-                <p className="text-muted" style={{ marginBottom: '1.5rem', fontSize: '1.1rem', color: '#78350f' }}>
-                    At Aqua Plus RO Tech, we believe that clean water is the foundation of good health. Established in Thirunagar,
-                    we have grown to serve over 500+ families across Madurai with a singular mission: **Zero Compromise on Water Quality.**
-                </p>
-                <p className="text-muted" style={{ marginBottom: '2rem', color: '#78350f' }}>
-                    Whether it's a routine filter change, a complex repair, or a new installation, our certified technicians
-                    bring expertise and genuine spare parts to your doorstep. We are not just service providers;
-                    we are your water safety guardians.
-                </p>
-                <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem', flexWrap: 'wrap' }}>
                     <div style={{
-                        background: 'linear-gradient(135deg, #667eea, #764ba2)',
-                        padding: '1.5rem',
-                        borderRadius: 'var(--radius-xl)',
-                        boxShadow: '0 8px 20px rgba(102, 126, 234, 0.4)',
-                        color: 'white',
-                        minWidth: '120px',
-                        textAlign: 'center'
+                        display: 'flex',
+                        gap: '1.5rem',
+                        flexWrap: 'wrap'
                     }}>
-                        <div style={{ fontWeight: 800, fontSize: '1.8rem' }}>10+ Years</div>
-                        <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>Experience</div>
-                    </div>
-                    <div style={{
-                        background: 'linear-gradient(135deg, #f093fb, #f5576c)',
-                        padding: '1.5rem',
-                        borderRadius: 'var(--radius-xl)',
-                        boxShadow: '0 8px 20px rgba(240, 147, 251, 0.4)',
-                        color: 'white',
-                        minWidth: '120px',
-                        textAlign: 'center'
-                    }}>
-                        <div style={{ fontWeight: 800, fontSize: '1.8rem' }}>24/7</div>
-                        <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>Support</div>
-                    </div>
-                    <div style={{
-                        background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-                        padding: '1.5rem',
-                        borderRadius: 'var(--radius-xl)',
-                        boxShadow: '0 8px 20px rgba(79, 172, 254, 0.4)',
-                        color: 'white',
-                        minWidth: '120px',
-                        textAlign: 'center'
-                    }}>
-                        <div style={{ fontWeight: 800, fontSize: '1.8rem' }}>100%</div>
-                        <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>Satisfaction</div>
+                        <div style={{
+                            background: '#f8fafc',
+                            padding: '1.5rem 2rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #e2e8f0',
+                            minWidth: '130px',
+                            textAlign: 'center'
+                        }}>
+                            <div style={{ fontWeight: 700, fontSize: '1.75rem', color: '#0891b2' }}>10+</div>
+                            <div style={{ fontSize: '0.875rem', color: '#64748b', fontWeight: 500 }}>Years Experience</div>
+                        </div>
+                        <div style={{
+                            background: '#f8fafc',
+                            padding: '1.5rem 2rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #e2e8f0',
+                            minWidth: '130px',
+                            textAlign: 'center'
+                        }}>
+                            <div style={{ fontWeight: 700, fontSize: '1.75rem', color: '#0891b2' }}>24/7</div>
+                            <div style={{ fontSize: '0.875rem', color: '#64748b', fontWeight: 500 }}>Support Available</div>
+                        </div>
+                        <div style={{
+                            background: '#f8fafc',
+                            padding: '1.5rem 2rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid #e2e8f0',
+                            minWidth: '130px',
+                            textAlign: 'center'
+                        }}>
+                            <div style={{ fontWeight: 700, fontSize: '1.75rem', color: '#0891b2' }}>100%</div>
+                            <div style={{ fontSize: '0.875rem', color: '#64748b', fontWeight: 500 }}>Satisfaction</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="card" style={{ padding: 0, overflow: 'hidden', border: 'none', transform: 'rotate(2deg)' }}>
-                <img
-                    src="/images/about_team.png"
-                    alt="Aqua Plus RO Tech service team"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+                <div style={{
+                    overflow: 'hidden',
+                    borderRadius: '1rem',
+                    boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.15)'
+                }}>
+                    <img
+                        src="/images/about_team.png"
+                        alt="Aqua Plus RO Tech service team"
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            display: 'block'
+                        }}
+                    />
+                </div>
             </div>
         </div>
     </section>

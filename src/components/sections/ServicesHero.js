@@ -41,7 +41,7 @@ const ServicesHero = () => {
                             marginBottom: '1.5rem',
                             fontWeight: '800'
                         }}>
-                            Professional <span className="text-gradient">Water Solutions</span> at Your Doorstep
+                            Professional Water Solutions at Your Doorstep
                         </h1>
 
                         {/* Subheadline */}
