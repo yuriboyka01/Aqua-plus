@@ -1,15 +1,8 @@
 {
-    "redirects": [
+    "rewrites": [
         {
-            "source": "/:path*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "aquaplusrotech.shop"
-                }
-            ],
-            "destination": "https://www.aquaplusrotech.shop/:path*",
-            "permanent": true
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
