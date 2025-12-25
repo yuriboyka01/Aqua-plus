@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://aquaplusrotech.com/sitemap.xml
+Sitemap: https://www.aquaplusrotech.shop/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 0
