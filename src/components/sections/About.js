@@ -6,7 +6,7 @@ const About = () => (
         position: 'relative'
     }}>
         <div className="container">
-            <div className="grid-cols-2 flex-center" style={{ gap: '4rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div className="animate-fade-in">
                     <div style={{
                         display: 'inline-block',

@@ -24,41 +24,31 @@ const ServicesHero = () => {
         }}>
             <div className="container">
                 {/* Main Content */}
-                <div className="grid-cols-2" style={{ alignItems: 'center', gap: '4rem' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
                     {/* Left Content */}
-                    <div className="animate-slide-up">
+                    <div className="animate-slide-up order-2 md:order-1">
                         {/* Premium Badge */}
-                        <div className="premium-badge" style={{ marginBottom: '1.5rem' }}>
+                        <div className="premium-badge mb-6">
                             <Award size={18} />
                             <span>Certified Service Excellence</span>
                         </div>
 
                         {/* Headline */}
-                        <h1 style={{
-                            fontSize: '3.5rem',
-                            lineHeight: '1.1',
-                            marginBottom: '1.5rem',
-                            fontWeight: '800'
-                        }}>
+                        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
                             Professional Water Solutions at Your Doorstep
                         </h1>
 
                         {/* Subheadline */}
-                        <p className="text-muted" style={{
-                            fontSize: '1.25rem',
-                            marginBottom: '2.5rem',
-                            maxWidth: '550px',
-                            lineHeight: '1.7'
-                        }}>
+                        <p className="text-muted text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
                             From expert installation to comprehensive maintenance, we ensure your water purifier delivers pure, healthy water every single day.
                         </p>
 
                         {/* CTA Buttons */}
-                        <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <button
                                 onClick={handleBookNow}
-                                className="btn btn-primary btn-ripple hover-lift"
+                                className="btn btn-primary btn-ripple hover-lift justify-center"
                                 style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}
                             >
                                 Book Service Now
@@ -69,7 +59,7 @@ const ServicesHero = () => {
 
                             <button
                                 onClick={handleViewPlans}
-                                className="btn btn-secondary hover-lift"
+                                className="btn btn-secondary hover-lift justify-center"
                                 style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}
                             >
                                 View AMC Plans
@@ -77,7 +67,7 @@ const ServicesHero = () => {
 
                             <button
                                 onClick={handleWhatsApp}
-                                className="glass-button"
+                                className="glass-button justify-center sm:justify-start"
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
@@ -96,51 +86,30 @@ const ServicesHero = () => {
                         </div>
 
                         {/* Trust Indicators */}
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: '2rem',
-                            paddingTop: '2rem',
-                            borderTop: '1px solid var(--border)'
-                        }}>
+                        <div className="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-slate-200">
                             <div className="animate-slide-up stagger-1">
-                                <div style={{
-                                    fontWeight: '800',
-                                    fontSize: '2rem',
-                                    color: 'var(--primary)',
-                                    marginBottom: '0.25rem'
-                                }}>
+                                <div className="font-extrabold text-2xl md:text-3xl text-cyan-600 mb-1">
                                     10+
                                 </div>
-                                <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                                <div className="text-sm text-slate-500">
                                     Years Experience
                                 </div>
                             </div>
 
                             <div className="animate-slide-up stagger-2">
-                                <div style={{
-                                    fontWeight: '800',
-                                    fontSize: '2rem',
-                                    color: 'var(--primary)',
-                                    marginBottom: '0.25rem'
-                                }}>
+                                <div className="font-extrabold text-2xl md:text-3xl text-cyan-600 mb-1">
                                     500+
                                 </div>
-                                <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                                <div className="text-sm text-slate-500">
                                     Happy Customers
                                 </div>
                             </div>
 
                             <div className="animate-slide-up stagger-3">
-                                <div style={{
-                                    fontWeight: '800',
-                                    fontSize: '2rem',
-                                    color: 'var(--primary)',
-                                    marginBottom: '0.25rem'
-                                }}>
+                                <div className="font-extrabold text-2xl md:text-3xl text-cyan-600 mb-1">
                                     60min
                                 </div>
-                                <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                                <div className="text-sm text-slate-500">
                                     Avg Response
                                 </div>
                             </div>
@@ -148,85 +117,40 @@ const ServicesHero = () => {
                     </div>
 
                     {/* Right Visual */}
-                    <div className="animate-slide-up stagger-2" style={{ position: 'relative' }}>
+                    <div className="animate-slide-up stagger-2 relative order-1 md:order-2 mb-12 md:mb-0">
                         {/* Main Service Image Card */}
-                        <div className="card hover-lift" style={{
-                            padding: '1.5rem',
-                            background: 'white',
-                            borderRadius: 'var(--radius-2xl)',
-                            transform: 'rotate(-3deg)',
-                            boxShadow: 'var(--shadow-xl)'
-                        }}>
+                        <div className="card hover-lift relative z-10 bg-white p-6 rounded-3xl transform -rotate-2 md:-rotate-3 shadow-xl">
                             <img
                                 src="/images/hero_service.png"
                                 alt="Professional RO Service Technician"
-                                style={{
-                                    width: '100%',
-                                    height: '450px',
-                                    objectFit: 'cover',
-                                    borderRadius: 'var(--radius-xl)'
-                                }}
+                                className="w-full h-[280px] md:h-[450px] object-cover rounded-2xl"
                             />
 
-                            {/* Floating Certification Badge */}
-                            <div className="floating-badge glass-card" style={{
-                                position: 'absolute',
-                                bottom: '30px',
-                                left: '-30px',
-                                padding: '1.5rem',
-                                borderRadius: 'var(--radius-xl)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '1rem',
-                                maxWidth: '250px'
-                            }}>
-                                <div style={{
-                                    background: 'linear-gradient(135deg, #dcfce7, #bbf7d0)',
-                                    padding: '1rem',
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <CheckCircle size={32} color="#166534" strokeWidth={2.5} />
+                            {/* Floating Certification Badge - Mobile Optimized */}
+                            <div className="md:absolute md:bottom-8 md:-left-8 mt-4 md:mt-0 glass-card p-4 md:p-6 rounded-2xl flex items-center gap-4 max-w-full md:max-w-xs shadow-lg bg-white/90 backdrop-blur-sm">
+                                <div className="bg-gradient-to-br from-green-100 to-green-200 p-3 md:p-4 rounded-full flex items-center justify-center shrink-0">
+                                    <CheckCircle size={28} className="text-green-700" strokeWidth={2.5} />
                                 </div>
                                 <div>
-                                    <div style={{ fontWeight: '700', fontSize: '1rem', color: 'var(--text-main)' }}>
+                                    <div className="font-bold text-base text-slate-900">
                                         100% Certified
                                     </div>
-                                    <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                                    <div className="text-sm text-slate-500">
                                         Genuine Parts Only
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Floating Service Stats */}
-                            <div className="floating-badge glass-card" style={{
-                                position: 'absolute',
-                                top: '30px',
-                                right: '-30px',
-                                padding: '1.25rem 1.5rem',
-                                borderRadius: 'var(--radius-xl)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                animationDelay: '1s'
-                            }}>
-                                <div style={{
-                                    background: 'linear-gradient(135deg, #dbeafe, #bfdbfe)',
-                                    padding: '0.75rem',
-                                    borderRadius: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <Clock size={24} color="#1e40af" strokeWidth={2.5} />
+                            {/* Floating Service Stats - Mobile Optimized */}
+                            <div className="md:absolute md:top-8 md:-right-8 mt-4 md:mt-0 glass-card p-4 md:p-6 rounded-2xl flex items-center gap-4 shadow-lg bg-white/90 backdrop-blur-sm animation-delay-1000">
+                                <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-3 rounded-full flex items-center justify-center shrink-0">
+                                    <Clock size={24} className="text-blue-700" strokeWidth={2.5} />
                                 </div>
                                 <div>
-                                    <div style={{ fontWeight: '700', fontSize: '0.95rem', color: 'var(--text-main)' }}>
+                                    <div className="font-bold text-base text-slate-900">
                                         Same Day Service
                                     </div>
-                                    <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                                    <div className="text-sm text-slate-500">
                                         Available 24/7
                                     </div>
                                 </div>
@@ -234,39 +158,13 @@ const ServicesHero = () => {
                         </div>
 
                         {/* Decorative Elements */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '-20px',
-                            right: '-20px',
-                            width: '150px',
-                            height: '150px',
-                            background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(2, 132, 199, 0.1))',
-                            borderRadius: '50%',
-                            filter: 'blur(40px)',
-                            zIndex: -1
-                        }} />
-
-                        <div style={{
-                            position: 'absolute',
-                            bottom: '-30px',
-                            left: '-30px',
-                            width: '200px',
-                            height: '200px',
-                            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1))',
-                            borderRadius: '50%',
-                            filter: 'blur(50px)',
-                            zIndex: -1
-                        }} />
+                        <div className="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-cyan-500/10 rounded-full blur-3xl -z-10" />
+                        <div className="absolute bottom-0 left-0 w-48 h-48 md:w-60 md:h-60 bg-amber-500/10 rounded-full blur-3xl -z-10" />
                     </div>
                 </div>
 
                 {/* Service Highlights */}
-                <div style={{
-                    marginTop: '5rem',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(4, 1fr)',
-                    gap: '2rem'
-                }}>
+                <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                         { icon: CheckCircle, title: 'Certified Technicians', desc: 'Trained & experienced' },
                         { icon: Award, title: 'Genuine Parts', desc: '100% authentic spares' },
@@ -275,78 +173,29 @@ const ServicesHero = () => {
                     ].map((item, idx) => (
                         <div
                             key={idx}
-                            className="card hover-lift animate-slide-up"
+                            className="card hover-lift animate-slide-up bg-white p-6 text-center border border-slate-200"
                             style={{
-                                padding: '1.5rem',
-                                textAlign: 'center',
                                 animationDelay: `${idx * 0.1}s`,
-                                border: '1px solid var(--border)',
-                                background: 'white'
                             }}
                         >
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                marginBottom: '1rem'
-                            }}>
-                                <div className="service-card-icon" style={{
-                                    background: 'linear-gradient(135deg, #eff6ff, #dbeafe)',
-                                    padding: '1rem',
-                                    borderRadius: 'var(--radius-lg)',
-                                    display: 'inline-flex'
-                                }}>
-                                    <item.icon size={28} color="var(--primary)" strokeWidth={2} />
+                            <div className="flex justify-center mb-4">
+                                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-2xl inline-flex">
+                                    <item.icon size={28} className="text-cyan-600" strokeWidth={2} />
                                 </div>
                             </div>
-                            <h4 style={{
-                                fontSize: '1rem',
-                                fontWeight: '700',
-                                marginBottom: '0.5rem',
-                                color: 'var(--text-main)'
-                            }}>
+                            <h4 className="text-base font-bold mb-2 text-slate-900">
                                 {item.title}
                             </h4>
-                            <p style={{
-                                fontSize: '0.875rem',
-                                color: 'var(--text-muted)',
-                                margin: 0
-                            }}>
+                            <p className="text-sm text-slate-500 m-0">
                                 {item.desc}
                             </p>
                         </div>
                     ))}
                 </div>
             </div>
-
-            {/* Responsive Styles */}
-            <style jsx>{`
-        @media (max-width: 768px) {
-          .grid-cols-2 {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-          }
-          
-          h1 {
-            font-size: 2.5rem !important;
-          }
-          
-          .floating-badge {
-            position: static !important;
-            margin-top: 1rem !important;
-          }
-          
-          div[style*="gridTemplateColumns: repeat(4, 1fr)"] {
-            grid-template-columns: 1fr !important;
-          }
-          
-          div[style*="gridTemplateColumns: repeat(3, 1fr)"] {
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 1rem !important;
-          }
-        }
-      `}</style>
         </section>
     );
 };
 
 export default ServicesHero;
+

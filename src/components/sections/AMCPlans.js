@@ -168,7 +168,7 @@ const AMCPlans = () => {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid-cols-3" style={{ gap: '2rem', marginBottom: '4rem' }}>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                     {amcPlans.map((plan, idx) => (
                         <div
                             key={idx}
@@ -382,7 +382,7 @@ const AMCPlans = () => {
                     }}>
                         Why Choose Our AMC Plans?
                     </h3>
-                    <div className="grid-cols-3" style={{ gap: '2rem' }}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {benefits.map((benefit, idx) => (
                             <div key={idx} style={{ textAlign: 'center' }}>
                                 <div style={{

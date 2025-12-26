@@ -64,7 +64,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="grid-cols-3" style={{ gap: '2rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((p) => (
             <article
               key={p.id}

@@ -211,7 +211,7 @@ const BlogSection = () => {
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid-cols-2" style={{ gap: '2rem' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {BLOG_POSTS.map((post) => (
                         <article
                             key={post.id}

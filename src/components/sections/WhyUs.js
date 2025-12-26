@@ -25,7 +25,7 @@ const WhyUs = () => (
         </p>
       </div>
 
-      <div className="grid-cols-3" style={{ gap: '2rem' }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="card" style={{
           border: '1px solid #e2e8f0',
           background: 'white',

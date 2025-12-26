@@ -84,7 +84,7 @@ const Services = () => {
         </div>
 
         {/* Service Cards */}
-        <div className="grid-cols-3" style={{ gap: '2rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <article
               key={index}
