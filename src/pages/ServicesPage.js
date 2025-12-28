@@ -5,6 +5,10 @@ import AMCPlans from '../components/sections/AMCPlans';
 import Booking from '../components/sections/Booking';
 
 const ServicesPage = () => {
+    React.useEffect(() => {
+        document.title = "RO Repair, Installation & AMC Services Madurai | Aqua Plus";
+    }, []);
+
     return (
         <div style={{ paddingTop: '80px' }}>
             <ServicesHero />

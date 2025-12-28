@@ -23,14 +23,14 @@ const Hero = () => {
         {/* Content Side */}
         <div className="animate-fade-in text-center md:text-left order-2 md:order-1">
           <div className="inline-block px-5 py-2.5 bg-white/15 backdrop-blur-md text-white rounded-full font-semibold text-sm mb-6 border border-white/20 tracking-wide">
-            #1 Rated Water Service in Madurai
+            #1 Rated RO Sales & Service in Madurai
           </div>
           <h1 className="text-white mb-6 leading-[1.1] font-extrabold text-4xl md:text-6xl">
-            Experience <span className="text-cyan-300">Pure Water</span>, <br className="hidden md:block" />
-            Experience Health.
+            Premium <span className="text-cyan-300">RO Sales</span> & <br className="hidden md:block" />
+            Expert Services
           </h1>
           <p className="text-lg md:text-xl mb-10 text-white/85 leading-relaxed max-w-lg mx-auto md:mx-0">
-            Advanced RO purifiers and expert maintenance services delivered to your doorstep. Join 500+ happy families today.
+            Buy top-rated RO purifiers at wholesale prices. Expert installation, repair, and AMC services delivered to your doorstep.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button

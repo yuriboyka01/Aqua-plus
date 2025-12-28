@@ -8,6 +8,10 @@ import BlogSection from '../components/sections/BlogSection';
 import Testimonials from '../components/sections/Testimonials';
 
 const Home = () => {
+    React.useEffect(() => {
+        document.title = "Aqua Plus RO Tech - Best RO Sales & Service in Madurai";
+    }, []);
+
     return (
         <>
             <Hero />

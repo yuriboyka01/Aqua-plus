@@ -1,8 +1,11 @@
 import React from 'react';
-import { Wrench, Settings, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Wrench, Settings, MapPin, ShoppingBag } from 'lucide-react';
 import { scrollToBooking, scrollToAMCPlans } from '../../utils/scrollUtils';
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const handleBookInstall = (e) => {
     e.preventDefault();
     scrollToBooking('installation');
@@ -18,7 +21,20 @@ const Services = () => {
     scrollToBooking('repair');
   };
 
+  const handleViewProducts = () => {
+    navigate('/products');
+  };
+
   const services = [
+    {
+      icon: ShoppingBag,
+      title: 'RO Purifier Sales',
+      description: 'Buy top-rated RO purifiers at wholesale prices. Domestic & commercial models available with free installation.',
+      features: ['Best Market Price', 'Free Installation', '1 Year Warranty'],
+      buttonText: 'View Products',
+      buttonAction: handleViewProducts,
+      highlight: true
+    },
     {
       icon: MapPin,
       title: 'Installation',
@@ -33,8 +49,7 @@ const Services = () => {
       description: 'Peace of mind with our annual maintenance plans. Includes regular filter checks and quality testing.',
       features: ['Annual Plans', 'Filter Checks', 'TDS Testing'],
       buttonText: 'View Plans',
-      buttonAction: handleViewPlans,
-      highlight: true
+      buttonAction: handleViewPlans
     },
     {
       icon: Wrench,

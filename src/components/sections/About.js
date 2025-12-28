@@ -37,7 +37,7 @@ const About = () => (
                         lineHeight: '1.7'
                     }}>
                         At Aqua Plus RO Tech, we believe that clean water is the foundation of good health. Established in Thirunagar,
-                        we have grown to serve over 500+ families across Madurai with a singular mission: <strong>Zero Compromise on Water Quality.</strong>
+                        we have grown to serve over 500+ families across Madurai including <strong>Anna Nagar, K.K. Nagar, Bymax, Avaniyapuram, Villapuram, Palanganotham, and Madakulam</strong> with a singular mission: <strong>Zero Compromise on Water Quality.</strong>
                     </p>
                     <p style={{
                         marginBottom: '2.5rem',
