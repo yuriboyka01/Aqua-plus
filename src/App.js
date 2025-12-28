@@ -5,6 +5,8 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 
+import StickyMobileBar from './components/layout/StickyMobileBar';
+
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
 const ProductsPage = lazy(() => import('./pages/ProductsPage'));
@@ -18,7 +20,7 @@ function App() {
       <Router>
         <div className="app-container">
           <Navbar />
-          <main>
+          <main className="pb-16 md:pb-0"> {/* Add padding bottom on mobile for sticky bar */}
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
             </Suspense>
           </main>
           <Footer />
+          <StickyMobileBar />
         </div>
       </Router>
     </InventoryProvider>

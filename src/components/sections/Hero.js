@@ -55,6 +55,12 @@ const Hero = () => {
               <div className="text-sm text-white/70">Happy Clients</div>
             </div>
             <div className="text-center md:text-left">
+              <div className="font-bold text-3xl text-white flex items-center justify-center md:justify-start gap-1">
+                4.9/5 <span className="text-yellow-400 text-2xl">★</span>
+              </div>
+              <div className="text-sm text-white/70">Google Rated</div>
+            </div>
+            <div className="text-center md:text-left">
               <div className="font-bold text-3xl text-white">60min</div>
               <div className="text-sm text-white/70">Response Time</div>
             </div>
