@@ -554,6 +554,10 @@ a.btn {
   background: #f1f5f9;
 }
 
+.navbar-toggle svg {
+  stroke: #0f172a;
+}
+
 /* Mobile Overlay */
 .navbar-mobile-overlay {
   display: none;
