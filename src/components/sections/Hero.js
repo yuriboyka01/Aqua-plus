@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import OptimizedImage from '../ui/OptimizedImage';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -75,10 +76,13 @@ const Hero = () => {
         <div className="relative animate-fade-in order-1 md:order-2">
           {/* Main Image Card */}
           <div className="bg-white p-3 rounded-2xl shadow-2xl transform rotate-1 md:rotate-2">
-            <img
+            <OptimizedImage
               src="/images/hero_service.png"
               alt="Aqua Plus RO Tech technician installing RO purifier"
-              className="rounded-xl w-full h-[280px] md:h-[420px] object-cover"
+              width={1200}
+              height={800}
+              priority={true}
+              className="rounded-xl w-full h-[280px] md:h-[420px]"
             />
             {/* Floating Badge */}
             <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-white p-4 md:p-6 rounded-xl shadow-lg flex items-center gap-3 md:gap-4 max-w-[200px] md:max-w-xs">

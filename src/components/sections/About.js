@@ -1,4 +1,5 @@
 import React from 'react';
+import OptimizedImage from '../ui/OptimizedImage';
 
 const About = () => (
     <section id="about" className="section-padding" style={{
@@ -90,22 +91,13 @@ const About = () => (
                     </div>
                 </div>
 
-                <div style={{
-                    overflow: 'hidden',
-                    borderRadius: '1rem',
-                    boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.15)'
-                }}>
-                    <img
-                        src="/images/about_team.png"
-                        alt="Aqua Plus RO Tech service team"
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            display: 'block'
-                        }}
-                    />
-                </div>
+                <OptimizedImage
+                    src="/images/about_team.png"
+                    alt="Aqua Plus RO Tech service team"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl shadow-2xl"
+                />
             </div>
         </div>
     </section>

@@ -35,7 +35,8 @@
   --surface-alt: #f8fafc;
   --surface-dark: #0f172a;
   --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569;
+  /* Updated for better contrast (WCAG AA compliant) */
   --text-light: #94a3b8;
   --border: #e2e8f0;
   --border-light: #f1f5f9;
@@ -471,7 +472,8 @@ a.btn {
 
 .navbar-tagline {
   font-size: 0.6875rem;
-  color: #64748b;
+  color: #475569;
+  /* Updated for better contrast */
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;

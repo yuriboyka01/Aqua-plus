@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Droplet, Filter, Shield, Sparkles, Wind, Zap, Plus } from 'lucide-react';
+import OptimizedImage from '../ui/OptimizedImage';
 
 const FiltrationProcess = () => {
     const [expandedStage, setExpandedStage] = useState(null);
@@ -148,10 +149,12 @@ const FiltrationProcess = () => {
 
                 {/* Filtration Diagram */}
                 <div className="card" style={{ padding: '2rem', textAlign: 'center', marginBottom: '3rem' }}>
-                    <img
+                    <OptimizedImage
                         src="/images/filtration_diagram.png"
                         alt="5-7 Stage RO Filtration Process Diagram"
-                        style={{ width: '100%', maxHeight: '500px', objectFit: 'contain', margin: '0 auto' }}
+                        width={1000}
+                        height={1000}
+                        objectFit="contain"
                     />
                 </div>
 
