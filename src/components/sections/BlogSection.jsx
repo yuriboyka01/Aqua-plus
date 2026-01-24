@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Droplet, Wrench, Shield, TrendingUp, X } from 'lucide-react';
+import { Droplet, Wrench, Shield, TrendingUp, X, Clock, ArrowRight } from 'lucide-react';
 
 const BLOG_POSTS = [
     {
         id: 1,
         icon: Droplet,
-        iconColor: '#0891b2',
-        iconBg: '#f0f9ff',
+        iconColor: 'text-cyan-600',
+        iconBg: 'bg-cyan-50',
+        borderColor: 'border-l-cyan-600',
         title: '5 Signs Your RO Membrane Needs Replacement',
-        excerpt: 'Learn to identify when your RO membrane is failing. Common signs include increased TDS levels, reduced water flow, and changes in water taste. Regular testing can save you from health risks.',
+        excerpt: 'Learn to identify when your RO membrane is failing. Common signs include increased TDS levels, reduced water flow, and changes in water taste.',
         readTime: '3 min read',
         fullContent: {
             intro: 'The RO membrane is the heart of your water purifier. It removes 90-95% of dissolved solids, bacteria, and contaminants. However, like all filters, it has a limited lifespan. Here are the key signs that indicate your RO membrane needs immediate replacement.',
@@ -35,16 +36,18 @@ const BLOG_POSTS = [
                 }
             ],
             conclusion: 'Don\'t compromise on water safety. If you notice any of these signs, contact Aqua Plus for a free membrane check and genuine replacement parts.',
-            cta: 'Book a free membrane check today!'
+            cta: 'Book a free membrane check today!',
+            ctaLink: 'https://wa.me/917010329920?text=I%20need%20a%20free%20RO%20membrane%20check'
         }
     },
     {
         id: 2,
         icon: Wrench,
-        iconColor: '#f59e0b',
-        iconBg: '#fef3c7',
+        iconColor: 'text-amber-500',
+        iconBg: 'bg-amber-50',
+        borderColor: 'border-l-amber-500',
         title: 'RO vs UV vs UF: Which Water Purifier is Best for Madurai?',
-        excerpt: 'Madurai water has high TDS (500-2000 ppm). RO is essential for removing dissolved solids, while UV kills bacteria. Learn which combination works best for your area and water source.',
+        excerpt: 'Madurai water has high TDS (500-2000 ppm). RO is essential for removing dissolved solids, while UV kills bacteria. Learn which combination works best.',
         readTime: '5 min read',
         fullContent: {
             intro: 'Choosing the right water purifier in Madurai depends on your water source (corporation, borewell, or tanker) and TDS levels. Here\'s a comprehensive comparison to help you decide.',
@@ -71,16 +74,18 @@ const BLOG_POSTS = [
                 }
             ],
             conclusion: 'The best purifier depends on your specific water source. We offer free water testing to determine the exact TDS and recommend the most suitable purifier for your home.',
-            cta: 'Get free water testing today!'
+            cta: 'Get free water testing today!',
+            ctaLink: 'https://wa.me/917010329920?text=I%20want%20free%20water%20testing'
         }
     },
     {
         id: 3,
         icon: Shield,
-        iconColor: '#10b981',
-        iconBg: '#dcfce7',
+        iconColor: 'text-emerald-500',
+        iconBg: 'bg-emerald-50',
+        borderColor: 'border-l-emerald-500',
         title: 'How to Choose the Right Capacity RO for Your Home',
-        excerpt: 'Family of 4? Need 10-12L tank. Larger families or offices need 25-100 LPH industrial units. Calculate based on daily consumption, peak usage times, and water source TDS levels.',
+        excerpt: 'Family of 4? Need 10-12L tank. Larger families or offices need 25-100 LPH industrial units. Calculate based on daily consumption and peak usage.',
         readTime: '4 min read',
         fullContent: {
             intro: 'Selecting the right RO capacity is crucial - too small means waiting for water, too large means unnecessary expense. Here\'s how to calculate the perfect size for your needs.',
@@ -107,16 +112,18 @@ const BLOG_POSTS = [
                 }
             ],
             conclusion: 'Still confused? Our experts can visit your home, assess your needs, and recommend the perfect capacity RO system with a free demonstration.',
-            cta: 'Schedule a free home assessment!'
+            cta: 'Schedule a free home assessment!',
+            ctaLink: 'https://wa.me/917010329920?text=I%20need%20help%20choosing%20RO%20capacity'
         }
     },
     {
         id: 4,
         icon: TrendingUp,
-        iconColor: '#8b5cf6',
-        iconBg: '#f5f3ff',
+        iconColor: 'text-violet-500',
+        iconBg: 'bg-violet-50',
+        borderColor: 'border-l-violet-500',
         title: 'AMC vs Per-Service: Which is More Cost-Effective?',
-        excerpt: 'Annual Maintenance Contracts start at ₹2,500/year. Compare with individual service costs (₹500-₹1500 per visit). AMC includes filter changes, priority service, and peace of mind.',
+        excerpt: 'Annual Maintenance Contracts start at ₹2,500/year. Compare with individual service costs. AMC includes filter changes and priority service.',
         readTime: '3 min read',
         fullContent: {
             intro: 'Should you opt for an Annual Maintenance Contract or pay for each service visit? Let\'s break down the costs and benefits to help you make an informed decision.',
@@ -143,7 +150,8 @@ const BLOG_POSTS = [
                 }
             ],
             conclusion: 'AMC provides peace of mind and consistent water quality. With our plans, you never have to worry about unexpected breakdowns or service delays.',
-            cta: 'View our AMC plans!'
+            cta: 'View our AMC plans!',
+            ctaLink: '/services'
         }
     }
 ];
@@ -164,7 +172,6 @@ const BlogSection = () => {
         setTimeout(() => setSelectedPost(null), 300);
     };
 
-    // Close on escape key
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape') closeModal();
@@ -174,134 +181,53 @@ const BlogSection = () => {
     }, []);
 
     return (
-        <section className="section-padding" style={{ background: '#f8fafc' }}>
-            <div className="container">
+        <section className="py-20 bg-slate-50">
+            <div className="container mx-auto px-4">
                 {/* Section Header */}
-                <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-                    <div style={{
-                        display: 'inline-block',
-                        padding: '0.5rem 1rem',
-                        background: '#dcfce7',
-                        color: '#166534',
-                        borderRadius: '99px',
-                        fontWeight: 600,
-                        fontSize: '0.8125rem',
-                        marginBottom: '1rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
-                    }}>
+                <div className="text-center mb-14">
+                    <div className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold text-sm tracking-wide uppercase mb-4">
                         Expert Tips
                     </div>
-                    <h2 style={{
-                        fontSize: '2.25rem',
-                        marginBottom: '0.75rem',
-                        color: '#0f172a'
-                    }}>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                         Water Purifier Care & Maintenance Guide
                     </h2>
-                    <p style={{
-                        color: '#64748b',
-                        fontSize: '1.0625rem',
-                        maxWidth: '600px',
-                        margin: '0 auto',
-                        lineHeight: '1.7'
-                    }}>
+                    <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
                         Expert insights and tips from 10+ years of RO service experience in Madurai
                     </p>
                 </div>
 
                 {/* Blog Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {BLOG_POSTS.map((post) => (
                         <article
                             key={post.id}
-                            className="card"
                             onClick={() => openModal(post)}
-                            style={{
-                                padding: '2rem',
-                                borderLeft: `4px solid ${post.iconColor}`,
-                                cursor: 'pointer',
-                                background: 'white',
-                                border: '1px solid #e2e8f0',
-                                borderLeftWidth: '4px',
-                                borderLeftColor: post.iconColor,
-                                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
-                                transition: 'all 0.3s ease',
-                                height: '100%',
-                                display: 'flex',
-                                flexDirection: 'column'
-                            }}
+                            className={`group bg-white rounded-2xl p-8 border border-slate-200 border-l-4 ${post.borderColor} shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-full transform hover:-translate-y-1`}
                         >
                             {/* Icon */}
-                            <div style={{
-                                width: '56px',
-                                height: '56px',
-                                borderRadius: '0.75rem',
-                                background: post.iconBg,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginBottom: '1.25rem'
-                            }}>
-                                <post.icon size={28} color={post.iconColor} strokeWidth={2} />
+                            <div className={`w-14 h-14 rounded-xl ${post.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                                <post.icon size={28} className={post.iconColor} strokeWidth={2} />
                             </div>
 
                             {/* Title */}
-                            <h3 style={{
-                                fontSize: '1.25rem',
-                                fontWeight: 700,
-                                color: '#0f172a',
-                                marginBottom: '0.875rem',
-                                lineHeight: '1.4'
-                            }}>
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-700 transition-colors">
                                 {post.title}
                             </h3>
 
                             {/* Excerpt */}
-                            <p style={{
-                                color: '#64748b',
-                                fontSize: '0.9375rem',
-                                lineHeight: '1.7',
-                                marginBottom: '1.5rem',
-                                flex: 1
-                            }}>
+                            <p className="text-slate-500 text-base leading-relaxed mb-6 flex-grow">
                                 {post.excerpt}
                             </p>
 
                             {/* Footer */}
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                alignItems: 'center',
-                                paddingTop: '1rem',
-                                borderTop: '1px solid #e2e8f0'
-                            }}>
-                                <div style={{
-                                    fontSize: '0.8125rem',
-                                    color: '#64748b',
-                                    fontWeight: 500,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.375rem'
-                                }}>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <polyline points="12 6 12 12 16 14"></polyline>
-                                    </svg>
+                            <div className="flex justify-between items-center pt-5 border-t border-slate-100 mt-auto">
+                                <div className="text-sm text-slate-400 font-medium flex items-center gap-2">
+                                    <Clock size={16} />
                                     {post.readTime}
                                 </div>
-                                <div style={{
-                                    fontSize: '0.875rem',
-                                    color: '#0891b2',
-                                    fontWeight: 600,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.375rem'
-                                }}>
+                                <div className="text-sm text-cyan-600 font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                                     Read More
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
-                                    </svg>
+                                    <ArrowRight size={16} />
                                 </div>
                             </div>
                         </article>
@@ -309,274 +235,99 @@ const BlogSection = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div style={{
-                    textAlign: 'center',
-                    marginTop: '3.5rem',
-                    padding: '2.5rem',
-                    background: 'white',
-                    borderRadius: '1rem',
-                    border: '1px solid #e2e8f0',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
-                }}>
-                    <h3 style={{ fontSize: '1.375rem', marginBottom: '0.75rem', color: '#0f172a' }}>
+                <div className="bg-white rounded-2xl p-8 md:p-10 border border-slate-200 shadow-sm text-center mt-14 max-w-3xl mx-auto">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
                         Need Expert Advice on RO Water Purifiers?
                     </h3>
-                    <p style={{ color: '#64748b', marginBottom: '1.5rem', fontSize: '1rem' }}>
+                    <p className="text-slate-500 mb-6 text-base">
                         Our team has 10+ years of experience serving Madurai. Get personalized recommendations!
                     </p>
                     <a
                         href="https://wa.me/917010329920?text=Hi%20Aqua%20Plus,%20I%20need%20advice%20on%20choosing%20the%20right%20RO%20purifier"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            background: 'linear-gradient(135deg, #0891b2, #0369a1)',
-                            color: 'white',
-                            border: 'none',
-                            fontWeight: 600,
-                            padding: '0.875rem 1.5rem'
-                        }}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-sky-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         Get Free Consultation
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                        <ArrowRight size={18} />
                     </a>
                 </div>
             </div>
 
             {/* Modal Overlay */}
             <div
-                className={`blog-modal-overlay ${isModalOpen ? 'active' : ''}`}
+                className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 ${isModalOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                 onClick={closeModal}
-                style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'rgba(0, 0, 0, 0.6)',
-                    backdropFilter: 'blur(4px)',
-                    zIndex: 9998,
-                    opacity: isModalOpen ? 1 : 0,
-                    visibility: isModalOpen ? 'visible' : 'hidden',
-                    transition: 'opacity 0.3s ease, visibility 0.3s ease'
-                }}
             />
 
             {/* Modal Content */}
             <div
-                className={`blog-modal ${isModalOpen ? 'active' : ''}`}
-                style={{
-                    position: 'fixed',
-                    top: '50%',
-                    left: '50%',
-                    transform: isModalOpen
-                        ? 'translate(-50%, -50%) scale(1)'
-                        : 'translate(-50%, -50%) scale(0.9)',
-                    width: '90%',
-                    maxWidth: '800px',
-                    maxHeight: '90vh',
-                    background: 'white',
-                    borderRadius: '1rem',
-                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                    zIndex: 9999,
-                    overflow: 'hidden',
-                    opacity: isModalOpen ? 1 : 0,
-                    visibility: isModalOpen ? 'visible' : 'hidden',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                }}
+                className={`fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-3xl max-h-[90vh] bg-white rounded-2xl shadow-2xl z-50 overflow-hidden transition-all duration-300 ${isModalOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 invisible'}`}
             >
                 {selectedPost && (
                     <>
                         {/* Modal Header */}
-                        <div style={{
-                            padding: '1.5rem 2rem',
-                            background: `linear-gradient(135deg, ${selectedPost.iconBg}, white)`,
-                            borderBottom: '1px solid #e2e8f0',
-                            display: 'flex',
-                            alignItems: 'flex-start',
-                            gap: '1rem'
-                        }}>
-                            <div style={{
-                                width: '56px',
-                                height: '56px',
-                                borderRadius: '0.75rem',
-                                background: 'white',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexShrink: 0,
-                                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
-                            }}>
-                                <selectedPost.icon size={28} color={selectedPost.iconColor} strokeWidth={2} />
+                        <div className={`p-6 md:p-8 bg-gradient-to-br from-white to-slate-50 border-b border-slate-100 flex items-start gap-5`}>
+                            <div className={`w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center flex-shrink-0 border border-slate-100`}>
+                                <selectedPost.icon size={28} className={selectedPost.iconColor} strokeWidth={2} />
                             </div>
-                            <div style={{ flex: 1 }}>
-                                <h2 style={{
-                                    fontSize: '1.5rem',
-                                    fontWeight: 700,
-                                    color: '#0f172a',
-                                    marginBottom: '0.375rem',
-                                    lineHeight: '1.3'
-                                }}>
+                            <div className="flex-1">
+                                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 leading-tight">
                                     {selectedPost.title}
                                 </h2>
-                                <div style={{
-                                    fontSize: '0.8125rem',
-                                    color: '#64748b',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.375rem'
-                                }}>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <polyline points="12 6 12 12 16 14"></polyline>
-                                    </svg>
+                                <div className="text-sm text-slate-500 flex items-center gap-2">
+                                    <Clock size={14} />
                                     {selectedPost.readTime}
                                 </div>
                             </div>
                             <button
                                 onClick={closeModal}
-                                style={{
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '50%',
-                                    background: 'white',
-                                    border: '1px solid #e2e8f0',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.2s ease',
-                                    flexShrink: 0
-                                }}
+                                className="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 transition-colors flex-shrink-0"
                             >
-                                <X size={20} color="#64748b" />
+                                <X size={20} />
                             </button>
                         </div>
 
                         {/* Modal Body */}
-                        <div style={{
-                            padding: '2rem',
-                            maxHeight: 'calc(90vh - 200px)',
-                            overflowY: 'auto'
-                        }}>
-                            {/* Introduction */}
-                            <p style={{
-                                fontSize: '1.0625rem',
-                                color: '#475569',
-                                lineHeight: '1.8',
-                                marginBottom: '2rem',
-                                paddingBottom: '1.5rem',
-                                borderBottom: '1px solid #e2e8f0'
-                            }}>
+                        <div className="p-6 md:p-8 overflow-y-auto max-h-[calc(90vh-140px)]">
+                            <p className="text-lg text-slate-600 leading-relaxed mb-8 pb-6 border-b border-slate-100 font-medium">
                                 {selectedPost.fullContent.intro}
                             </p>
 
-                            {/* Sections */}
-                            {selectedPost.fullContent.sections.map((section, index) => (
-                                <div
-                                    key={index}
-                                    style={{
-                                        marginBottom: '1.75rem',
-                                        animation: `fadeSlideIn 0.4s ease ${index * 0.1}s both`
-                                    }}
-                                >
-                                    <h3 style={{
-                                        fontSize: '1.125rem',
-                                        fontWeight: 700,
-                                        color: '#0f172a',
-                                        marginBottom: '0.625rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '0.5rem'
-                                    }}>
-                                        <span style={{
-                                            width: '6px',
-                                            height: '6px',
-                                            borderRadius: '50%',
-                                            background: selectedPost.iconColor
-                                        }}></span>
-                                        {section.title}
-                                    </h3>
-                                    <p style={{
-                                        fontSize: '0.9375rem',
-                                        color: '#64748b',
-                                        lineHeight: '1.75',
-                                        paddingLeft: '1rem'
-                                    }}>
-                                        {section.content}
-                                    </p>
-                                </div>
-                            ))}
+                            <div className="space-y-8">
+                                {selectedPost.fullContent.sections.map((section, index) => (
+                                    <div key={index} className="animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: `${index * 100}ms` }}>
+                                        <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-3">
+                                            <span className={`w-2 h-2 rounded-full ${selectedPost.iconColor.replace('text-', 'bg-')}`}></span>
+                                            {section.title}
+                                        </h3>
+                                        <p className="text-slate-600 leading-relaxed pl-5 border-l-2 border-slate-100">
+                                            {section.content}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
 
                             {/* Conclusion */}
-                            <div style={{
-                                marginTop: '2rem',
-                                padding: '1.5rem',
-                                background: selectedPost.iconBg,
-                                borderRadius: '0.75rem',
-                                borderLeft: `4px solid ${selectedPost.iconColor}`
-                            }}>
-                                <p style={{
-                                    fontSize: '0.9375rem',
-                                    color: '#475569',
-                                    lineHeight: '1.7',
-                                    marginBottom: '1rem'
-                                }}>
-                                    <strong>Conclusion:</strong> {selectedPost.fullContent.conclusion}
+                            <div className={`mt-10 p-6 rounded-xl ${selectedPost.iconBg} border border-slate-100`}>
+                                <p className="text-slate-700 leading-relaxed mb-4">
+                                    <strong className="block mb-2 text-slate-900">Conclusion:</strong>
+                                    {selectedPost.fullContent.conclusion}
                                 </p>
                                 <a
-                                    href="https://wa.me/917010329920"
+                                    href={selectedPost.fullContent.ctaLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn"
-                                    style={{
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '0.5rem',
-                                        background: selectedPost.iconColor,
-                                        color: 'white',
-                                        border: 'none',
-                                        fontWeight: 600,
-                                        padding: '0.75rem 1.25rem',
-                                        fontSize: '0.875rem'
-                                    }}
+                                    className={`inline-flex items-center gap-2 ${selectedPost.iconColor.replace('text-', 'bg-')} text-white px-5 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm`}
                                 >
                                     {selectedPost.fullContent.cta}
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
-                                    </svg>
+                                    <ArrowRight size={16} />
                                 </a>
                             </div>
                         </div>
                     </>
                 )}
             </div>
-
-            {/* Animation Keyframes */}
-            <style jsx>{`
-                @keyframes fadeSlideIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-                @media (max-width: 767px) {
-                    .blog-modal {
-                        width: 95% !important;
-                        max-height: 85vh !important;
-                    }
-                }
-            `}</style>
         </section>
     );
 };
