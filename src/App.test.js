@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders Aqua Plus RO Tech branding', async () => {
+  await act(async () => {
+    render(<App />);
+  });
+  const brandingElements = await screen.findAllByText(/Aqua Plus RO Tech/i);
+  expect(brandingElements.length).toBeGreaterThan(0);
 });
